@@ -1,0 +1,46 @@
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin-top: 30px;
+}
+.info {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.footer__informed {
+  width: 116px;
+  height: 44px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.heading > h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.list-link {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.link {
+  display: block;
+  text-decoration: none;
+  color: var(--label);
+  font-size: 14px;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.list-image {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+.link-image {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}

@@ -1,0 +1,128 @@
+.form-base {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.app-form {
+  width: 500px;
+  background-color: var(--secondary);
+  padding: 40px;
+  box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.14);
+  border-radius: 20px;
+}
+.app-form-head {
+  margin-bottom: 40px;
+}
+
+.form-heading {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+}
+
+.app-form-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.form-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.field-label {
+  color: var(--label);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  transition: all 0.25s;
+}
+.field-input::placeholder {
+  color: var(--label);
+  opacity: 0.8;
+  font-weight: 400;
+}
+.field-input:focus {
+  border: 1px solid #c1c2c3;
+  /* background-color: #e1f4f7; */
+}
+.field-forgot {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--label);
+  cursor: pointer;
+  color: #00ca72;
+}
+.field-forgot:hover {
+  text-decoration: underline;
+}
+
+.field-icons {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.field-btn {
+  width: 100%;
+  padding: 13px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: #00ca72;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: rgba(0, 202, 114, 0.12) 0px 20px 30px;
+}
+
+.field-btn:hover {
+  opacity: 0.8;
+}
+
+.field-any {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--label);
+  text-align: center;
+}
+.field-signup {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #08c7e0;
+  margin-left: 10px;
+}

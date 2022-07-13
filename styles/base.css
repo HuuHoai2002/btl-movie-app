@@ -1,0 +1,81 @@
+*,
+body,
+input {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #1e272e;
+  --secondary: #222b32;
+  --label: #a9acae;
+  --border: #384047;
+  --green: #00ca72;
+  --red: #ec4141;
+  --purple: #a338d6;
+  --blue: #5f48ea;
+  --text: "#f3f3f3";
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 10px;
+}
+.main-app {
+  width: 100%;
+  background-color: var(--primary);
+  box-sizing: border-box;
+  min-height: 100vh;
+  color: white;
+  user-select: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-full {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.base-btn {
+  text-decoration: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s;
+  font-weight: 500;
+  cursor: pointer;
+}
+.base-btn:hover {
+  opacity: 0.7;
+}
+.bg-primary {
+  background-color: var(--blue);
+}
+.base-btn-hover:hover {
+  background-color: white;
+  color: #242424;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}

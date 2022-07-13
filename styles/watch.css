@@ -1,0 +1,17 @@
+.play-movie-content {
+  margin-top: 20px;
+}
+
+.play-movie-frame {
+  width: 100%;
+  height: 600px;
+}
+
+.play-movie-title {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.movie-title {
+  font-size: 25px;
+}
