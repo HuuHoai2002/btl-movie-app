@@ -1,9 +1,9 @@
-import { api_key, base_url, image_url } from "../config/config.js";
+import { api_key, base_url, data_type, image_url } from "../config/config.js";
 import { fetchData } from "../utils/fetchData.js";
 
 const appBanner = document.querySelector(".app-banner");
 
-const url = `${base_url}/movie/popular?api_key=${api_key}&language=vi&page=1`;
+const url = `${base_url}/movie/${data_type.POPULAR}?api_key=${api_key}&language=vi&page=1`;
 
 const renderAppBanner = async () => {
   const data = await fetchData(url);

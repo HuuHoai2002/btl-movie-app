@@ -19,15 +19,20 @@
 <body>
   <div class="main-app">
     <?php include_once('./layout/header.php') ?>
-    <div class="app-play-movie container">
+    <div class="app-play-movie container min-h-100vh">
       <div class="play-movie-content">
         <div class="play-movie-title">
-          <span class="movie-title">Avengers: Endgame</span>
+          <span class="movie-title"></span>
         </div>
         <div class="play-movie-frame">
           <?php
           $id = $_GET['id'];
-          echo $id
+          $page = $_GET['page'];
+          echo $id;
+          echo '<br>';
+          echo $page;
+
+          echo ++$page;
           ?>
         </div>
       </div>

@@ -22,20 +22,19 @@
           <a href="index.php" class="content-link">Trang Chủ</a>
           <a href="" class="content-link">Phim Chiếu Rạp</a>
           <a href="" class="content-link">Phim Bộ</a>
-          <a href="" class="content-link">Khuyến Mãi</a>
           <a href="" class="content-link">Hỗ Trợ</a>
         </div>
       </div>
     </div>
     <div class="app-header-right">
-      <div class="app-header-search">
-        <input type="text" class="app-search-input" placeholder="Bạn muốn xem gì hôm nay?" />
+      <form action="search.php" class="app-header-search">
+        <input type="text" class="app-search-input" placeholder="Bạn muốn xem gì hôm nay?" name="q" />
         <a href="">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </a>
-      </div>
+      </form>
       <div class="app-header-users">
         <a href="signin.php" class="app-header-signin">Đăng Nhập</a>
         <!-- <div class="users">

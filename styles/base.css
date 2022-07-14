@@ -25,7 +25,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
+  background-color: var(--label);
   border-radius: 10px;
 }
 .main-app {
@@ -78,4 +78,7 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+}
+.min-h-100vh {
+  min-height: 100vh;
 }

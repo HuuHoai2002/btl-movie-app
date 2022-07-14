@@ -33,3 +33,6 @@
   outline: none;
   border: none;
 }
+.search-content {
+  min-height: 100vh;
+}
