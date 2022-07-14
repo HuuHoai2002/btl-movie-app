@@ -3,12 +3,15 @@ import { fetchData } from "./fetchData.js";
 
 export const renderListMovie = async (url, root) => {
   const data = await fetchData(url);
-  const contents = data
-    ?.map((content) => {
-      return `
-          <a href=${`details.php?name=${
-            encodeURI(content?.name) || encodeURI(content?.title)
-          }&id=${content.id}`} class="movie-item">
+
+  let contents =
+    "<h1 style='font-weigth: 500; font-size: 20px; color: var(--red)'>Không tìm thấy phim nào</h1>";
+
+  if (data.length > 0) {
+    contents = data
+      ?.map((content) => {
+        return `
+          <a href=${`details.php?id=${content.id}`} class="movie-item">
               <div class="movie-image">
                 <img src=${image_reduce + content.poster_path} alt="" />
               </div>
@@ -19,7 +22,9 @@ export const renderListMovie = async (url, root) => {
               </div>
             </a>
         `;
-    })
-    .join("");
+      })
+      .join("");
+  }
+
   root.innerHTML = contents;
 };

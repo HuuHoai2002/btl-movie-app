@@ -1,5 +1,5 @@
 .app-search-content {
-  margin: 20px 0;
+  margin: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,13 +25,18 @@
   border: 1px solid #2cccff;
 }
 .btn-search {
-  padding: 19px 60px;
+  width: 175px;
+  padding: 19px 0;
+  height: 66px;
   border-radius: 10px;
   background-color: #12a7ff;
   font-size: 16px;
   line-height: 24px;
   outline: none;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .search-content {
   min-height: 100vh;

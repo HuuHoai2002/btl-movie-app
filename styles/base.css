@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 *,
 body,
 input {
@@ -81,4 +83,7 @@ body::-webkit-scrollbar-thumb {
 }
 .min-h-100vh {
   min-height: 100vh;
+}
+.mt-50 {
+  margin-top: 50px;
 }

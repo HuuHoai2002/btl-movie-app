@@ -20,15 +20,15 @@
       <div class="app-header-content">
         <div class="content-list">
           <a href="index.php" class="content-link">Trang Chủ</a>
-          <a href="" class="content-link">Phim Chiếu Rạp</a>
-          <a href="" class="content-link">Phim Bộ</a>
+          <a href="movie.php?page=1" class="content-link">Phim Chiếu Rạp</a>
+          <a href="tvseries.php?page=1" class="content-link">Phim Bộ</a>
           <a href="" class="content-link">Hỗ Trợ</a>
         </div>
       </div>
     </div>
     <div class="app-header-right">
       <form action="search.php" class="app-header-search">
-        <input type="text" class="app-search-input" placeholder="Bạn muốn xem gì hôm nay?" name="q" autocomplete="off" />
+        <input type="text" class="app-search-input" placeholder="Bạn muốn xem gì hôm nay?" name="query" autocomplete="off" required />
         <button type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
