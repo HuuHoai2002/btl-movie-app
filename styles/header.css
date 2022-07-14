@@ -63,7 +63,7 @@
   border-radius: 20px;
   transition: all 0.25s;
 }
-.app-header-search > a {
+.app-header-search > button {
   display: block;
   text-decoration: none;
   position: absolute;
@@ -71,11 +71,15 @@
   right: 20px;
   transform: translate(0, -50%);
   color: #4d4d4d;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .app-search-input:focus {
   border: 1px solid white;
 }
-.app-search-input:focus ~ a {
+.app-search-input:focus ~ button {
   color: white;
 }
 .app-header-users {

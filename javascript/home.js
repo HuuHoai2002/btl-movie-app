@@ -6,7 +6,7 @@ const movie_popular = $(".movie-list.popular");
 const movie_toprated = $(".movie-list.top-rated");
 const movie_upcoming = $(".movie-list.up-coming");
 
-console.log(movie_popular, movie_toprated, movie_upcoming);
+// console.log(movie_popular, movie_toprated, movie_upcoming);
 
 const popular_url = `${base_url}/movie/${data_type.POPULAR}?api_key=${api_key}&language=vi&page=1`;
 const toprated_url = `${base_url}/movie/${data_type.TOP_RATED}?api_key=${api_key}&language=vi&page=1`;
