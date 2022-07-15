@@ -10,19 +10,17 @@
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/footer.css">
+  <link rel="stylesheet" href="./styles/details.css">
   <title>Document</title>
 </head>
 
 <body>
   <div class="main-app">
-    <div class="app-movie-details">
-      <?php include_once('./layout/header.php') ?>
-      <?php
-      $id = $_GET['id'];
-      echo $id
-      ?>
-      <?php include_once('./layout/footer.php') ?>
+    <?php include_once('./layout/header.php') ?>
+    <div class="app-movie-details container min-h-100vh">
+
     </div>
+    <?php include_once('./layout/footer.php') ?>
   </div>
 </body>
 

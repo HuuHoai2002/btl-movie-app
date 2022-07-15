@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/footer.css">
   <link rel="stylesheet" href="./styles/banner.css">
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/watch.css">
@@ -26,12 +27,7 @@
         <div class="play-movie-frame">
           <?php
           $id = $_GET['id'];
-          $page = $_GET['page'];
           echo $id;
-          echo '<br>';
-          echo $page;
-
-          echo ++$page;
           ?>
         </div>
       </div>

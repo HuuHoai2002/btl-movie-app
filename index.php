@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/footer.css">
   <title>Trang chủ</title>
+
   <script src="./vendor/jquery.js"></script>
   <script src="./vendor/slick.js"></script>
 </head>

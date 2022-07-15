@@ -21,7 +21,7 @@
     <div class="app-search container">
       <form action="search.php" class="app-search-content">
         <input type="text" class="search-input" placeholder="Tìm kiếm những bộ phim mà bạn yêu thích" name="query" autocomplete="off" required />
-        <button class="base-btn btn-search" type="submit" title="Tìm phim ngay">Search</button>
+        <button class="base-btn btn-search" type="submit" title="Tìm phim ngay">Tìm kiếm</button>
       </form>
       <div class="search-content">
         <div class="movie-list">

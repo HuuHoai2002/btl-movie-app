@@ -5,7 +5,7 @@ export const renderListMovie = async (url, root) => {
   const data = await fetchData(url);
 
   let contents =
-    "<h1 style='font-weigth: 500; font-size: 20px; color: var(--red)'>Không tìm thấy phim nào</h1>";
+    "<h1 style='font-weigth: 500; font-size: 20px; color: var(--red)'>Không tìm thấy bộ phim nào</h1>";
 
   if (data.length > 0) {
     contents = data
