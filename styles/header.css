@@ -105,6 +105,6 @@
 }
 
 .app-header-signin:hover {
-  background-color: white;
-  color: #101010;
+  background-color: var(--blue);
+  color: white;
 }

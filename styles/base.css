@@ -81,6 +81,7 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  min-height: 100vh;
 }
 .min-h-100vh {
   min-height: 100vh;

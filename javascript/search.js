@@ -8,8 +8,6 @@ const params = new URLSearchParams(window.location.search);
 
 const query = params.get("query");
 
-// console.log(query);
-
 const search_url = `${base_url}/search/multi?api_key=${api_key}&language=vi&query=${query}`;
 
 async function Main() {

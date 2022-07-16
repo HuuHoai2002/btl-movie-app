@@ -25,5 +25,5 @@ const convertString = (str = "", option = "", upper = false) => {
   }
 };
 
-console.log(convertString("John Doe", "lastname", true));
-console.log(convertString("John Doe", "acronym", true));
+// console.log(convertString("John Doe", "lastname", true));
+// console.log(convertString("John Doe", "acronym", true));
