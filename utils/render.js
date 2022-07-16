@@ -1,4 +1,5 @@
 import { image_reduce, image_url } from "../config/config.js";
+import { setTitle } from "../utils/setTitle.js";
 import { fetchData } from "./fetchData.js";
 
 export const renderAppBanner = async (url, root) => {
@@ -83,7 +84,7 @@ export const renderMovieDetails = async (url, root) => {
   const data = await response.json();
   const contents = `
       <div class="movie-details-content">
-        <div class="movie-image">
+        <div class="movie-details-image">
           <img src=${image_url + data.backdrop_path} alt="preview-movie-detals">
         </div>
         <div class="movie-info">
@@ -116,7 +117,7 @@ export const renderMovieDetails = async (url, root) => {
             </div>
           </div>
           <div class="actions">
-            <a href="watch.php?id=${id}" class="base-btn bg-primary">
+            <a href="watch.php?id=${data.id}" class="base-btn bg-primary">
               <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 3v18a1 1 0 0 0 1.54.841l14-9a1 1 0 0 0 0-1.682l-14-9A1 1 0 0 0 5 3zm2 1.832L18.15 12 7 19.167V4.832z" fill="#FFF" fill-rule="evenodd"></path>
               </svg>
