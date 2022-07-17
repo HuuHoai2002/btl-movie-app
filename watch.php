@@ -26,6 +26,10 @@
         </div>
         <div class="play-movie-frame">
         </div>
+
+        <div class="select-episodes">
+
+        </div>
       </div>
     </div>
     <?php include_once('./layout/footer.php') ?>

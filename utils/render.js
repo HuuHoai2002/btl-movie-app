@@ -25,7 +25,7 @@ export const renderAppBanner = async (url, root) => {
                       </p>
                       <div class="content-actions">
                         <a href=${
-                          `watch.php?id=` + content.id
+                          `watch.php?type=movie&id=` + content.id
                         } class="base-btn bg-primary"
                           ><svg
                             width="24"
@@ -72,6 +72,7 @@ export const renderListMovie = async (url, root) => {
                   content.name || content.title
                 }</p>
               </div>
+              ${content.name ? `<div class="tv-icon">TV</div>` : ""}
             </a>
         `;
       })

@@ -38,7 +38,21 @@
 .movie-item:hover > .movie-content {
   color: #ec4f5f;
 }
-
+.tv-icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  border-radius: 6px;
+  background-color: var(--purple);
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .app-content-heading {
   font-size: 25px;
   font-weight: 600;
