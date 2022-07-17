@@ -61,7 +61,9 @@ export const renderListMovie = async (url, root) => {
     contents = data
       ?.map((content) => {
         return `
-          <a href=${`details.php?id=${content.id}`} class="movie-item">
+          <a href=${`details.php?type=${
+            content.name ? "tvseries" : "movie"
+          }&id=${content.id}`} class="movie-item">
               <div class="movie-image">
                 <img src=${image_reduce + content.poster_path} alt="" />
               </div>
@@ -101,15 +103,23 @@ export const renderMovieDetails = async (url, root) => {
           </div>
           <div class="list-content">
             <p class="movie-overview">
-              ${data.overview || "Chưa có mô tả chi tiết"}
+              ${data.overview || "Bộ phim chưa có mô tả chi tiết"}
             </p>
             <div class="content">
-              <span class="content-title">Ngày ra rạp:</span>
-              <span class="content-info">${data.release_date}</span>
+              <span class="content-title">${
+                data.name ? "Ngày phát sóng:" : "Ngày ra rạp:"
+              }</span>
+              <span class="content-info">${
+                data.release_date || data.first_air_date
+              }</span>
             </div>
             <div class="content">
-              <span class="content-title">Thời lượng:</span>
-              <span class="content-info">${data.runtime} phút</span>
+              <span class="content-title">${
+                data.name ? "Tổng số tập phim:" : "Thời lượng:"
+              }</span>
+              <span class="content-info">${
+                data.name ? data.number_of_episodes : data.runtime
+              } ${data.name ? "tập" : "phút"}</span>
             </div>
             <div class="content">
               <span class="content-title">Đánh giá:</span>

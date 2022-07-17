@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/header.css">
-  <link rel="stylesheet" href="./styles/banner.css">
   <link rel="stylesheet" href="./styles/movie.css">
+  <link rel="stylesheet" href="./styles/search.css">
   <link rel="stylesheet" href="./styles/footer.css">
   <title>Document</title>
 </head>
@@ -19,15 +19,30 @@
 <body>
   <div class="main-app">
     <?php include_once('./layout/header.php') ?>
-    <div class="app-banner container-full">
+    <div class="app-search container">
+      <form action="search.php" class="app-search-content">
+        <input type="text" class="search-input" placeholder="Bạn tìm phim nào hôm nay?" name="query" autocomplete="off" required />
+        <button class="base-btn btn-search" type="submit" title="Tìm phim ngay">Tìm kiếm</button>
+      </form>
     </div>
     <div class="app-content-movie container">
       <div class="app-content-wrapper">
-        <h2 class="app-content-heading">Phim Chiếu Rạp</h2>
+        <h2 class="app-content-heading">Phim Bộ</h2>
         <div class="movie-list popular"></div>
       </div>
     </div>
+    <div class="next-page">
+      <?php
+      $page = $_GET['page'];
+
+      echo '<a class="base-btn bg-primary" href="movie.php?page=' . ($page + 1) . '">Xem thêm</a>';
+      ?>
+    </div>
+    <div class="mt-50">
+      <?php include_once('./layout/footer.php') ?>
+    </div>
   </div>
 </body>
+<script async src="./javascript/tvseries.js" type="module"></script>
 
 </html>

@@ -25,10 +25,6 @@
           <span class="movie-title"></span>
         </div>
         <div class="play-movie-frame">
-          <?php
-          $id = $_GET['id'];
-          echo '<iframe width="100%" height="100%" src="https://www.2embed.to/embed/tmdb/movie?id=' . $id . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-          ?>
         </div>
       </div>
     </div>
@@ -36,9 +32,6 @@
   </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const keyword = params.get("q");
-    console.log(keyword);
   </script>
 </body>
 
