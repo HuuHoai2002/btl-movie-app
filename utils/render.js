@@ -101,7 +101,7 @@ export const renderMovieDetails = async (url, root) => {
           </div>
           <div class="list-content">
             <p class="movie-overview">
-              ${data.overview}
+              ${data.overview || "Chưa có mô tả chi tiết"}
             </p>
             <div class="content">
               <span class="content-title">Ngày ra rạp:</span>

@@ -27,7 +27,7 @@
         <div class="play-movie-frame">
           <?php
           $id = $_GET['id'];
-          echo $id;
+          echo '<iframe width="100%" height="100%" src="https://www.2embed.to/embed/tmdb/movie?id=' . $id . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
           ?>
         </div>
       </div>
