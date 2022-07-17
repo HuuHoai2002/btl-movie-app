@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/search.css">
   <link rel="stylesheet" href="./styles/footer.css">
-  <title>Document</title>
+  <title>Phim bộ</title>
 </head>
 
 <body>

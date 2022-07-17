@@ -31,7 +31,7 @@
     <?php include_once('./layout/footer.php') ?>
   </div>
 
-  <script>
+  <script async src="./javascript/watch.js" type="module">
   </script>
 </body>
 

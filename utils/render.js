@@ -61,9 +61,9 @@ export const renderListMovie = async (url, root) => {
     contents = data
       ?.map((content) => {
         return `
-          <a href=${`details.php?type=${
-            content.name ? "tvseries" : "movie"
-          }&id=${content.id}`} class="movie-item">
+          <a href=${`details.php?type=${content.name ? "tv" : "movie"}&id=${
+            content.id
+          }`} class="movie-item">
               <div class="movie-image">
                 <img src=${image_reduce + content.poster_path} alt="" />
               </div>
@@ -127,7 +127,9 @@ export const renderMovieDetails = async (url, root) => {
             </div>
           </div>
           <div class="actions">
-            <a href="watch.php?id=${data.id}" class="base-btn bg-primary">
+            <a href=${`watch.php?type=${data.name ? "tv" : "movie"}&id=${
+              data.id
+            }${data.name ? "&episode=1" : ""}`} class="base-btn bg-primary">
               <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 3v18a1 1 0 0 0 1.54.841l14-9a1 1 0 0 0 0-1.682l-14-9A1 1 0 0 0 5 3zm2 1.832L18.15 12 7 19.167V4.832z" fill="#FFF" fill-rule="evenodd"></path>
               </svg>
