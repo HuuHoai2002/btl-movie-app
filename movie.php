@@ -38,9 +38,7 @@
         ?>
       </div>
     </div>
-    <div class="mt-50">
-      <?php include_once('./layout/footer.php') ?>
-    </div>
+    <?php include_once('./layout/footer.php') ?>
   </div>
   <script async src="./javascript/movie.js" type="module"></script>
 </body>

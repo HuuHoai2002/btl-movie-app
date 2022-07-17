@@ -28,9 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="mt-50">
-      <?php include "./layout/footer.php"; ?>
-    </div>
+    <?php include "./layout/footer.php"; ?>
   </div>
   </div>
 

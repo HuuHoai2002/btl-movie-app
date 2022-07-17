@@ -30,6 +30,7 @@ const renderFrame = async () => {
 const renderMovieInfo = async () => {
   const reponse = await fetch(details_url);
   const data = await reponse.json();
+  console.log(data);
   const contens = `
     <h3>Tập phim</h3>
       <div class="list-episodes">
@@ -42,7 +43,9 @@ const renderMovieInfo = async () => {
             }`} class=${
               Number(episode) === index + 1 ? "episode-active" : "episode"
             }>
-              Tập ${index + 1}      
+              Tập ${
+                data.number_of_episodes === index + 1 ? `cuối` : index + 1
+              }     
             </a>
           `;
           })
