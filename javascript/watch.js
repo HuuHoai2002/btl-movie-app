@@ -1,12 +1,16 @@
 import { api_key, base_url } from "../config/config.js";
+import {
+  renderListMovie,
+  renderMovieRecommendations,
+} from "../utils/render.js";
 import { $ } from "../utils/selector.js";
 import { setTitle } from "../utils/setTitle.js";
 
 const params = new URLSearchParams(window.location.search);
 
 const frame = $(".play-movie-frame");
-const select_episodes = $(".select-episodes");
-const movie_title = $(".movie-title");
+const sidebar = $(".play-sidebar");
+const movie_recommendations = $(".movie-list");
 
 const type = params.get("type");
 const id = params.get("id");
@@ -15,6 +19,8 @@ const episode = params.get("episode");
 const is_movie = type === "movie";
 
 const details_url = `${base_url}/${type}/${id}?api_key=${api_key}&language=vi`;
+const similar_url = `${base_url}/${type}/${id}/similar?api_key=${api_key}&language=vi`;
+const recommendations_url = `${base_url}/${type}/${id}/recommendations?api_key=${api_key}&language=vi`;
 
 const renderFrame = async () => {
   const contents = `
@@ -27,37 +33,45 @@ const renderFrame = async () => {
   frame.innerHTML = contents;
 };
 
-const renderMovieInfo = async () => {
+const renderSidebar = async () => {
   const reponse = await fetch(details_url);
   const data = await reponse.json();
-  console.log(data);
-  const contens = `
-    <h3>Tập phim</h3>
-      <div class="list-episodes">
-        ${new Array(data.number_of_episodes)
-          .fill(0)
-          .map((_, index) => {
-            return `
-            <a href=${`watch.php?type=tv&id=${id}&episode=${
-              index + 1
-            }`} class=${
-              Number(episode) === index + 1 ? "episode-active" : "episode"
-            }>
-              Tập ${
-                data.number_of_episodes === index + 1 ? `cuối` : index + 1
-              }     
+  const contents = `
+    <div class="movie-watching-info">
+      <h3 class="watching-title">${data.name || data.title}</h3>
+      ${!is_movie ? `<div class="watching-episode">Tập ${episode}</div>` : ""}
+    </div>
+    ${
+      !is_movie
+        ? `<div class="list-episodes" style=${
+            is_movie ? "max-height:480px" : "max-height:443px"
+          }>
+      ${new Array(data.number_of_episodes)
+        .fill(0)
+        .map((_, index) => {
+          return `
+              <a href=${`watch.php?type=tv&id=${id}&episode=${
+                index + 1
+              }`} class=${
+            Number(episode) === index + 1 ? "episode-active" : "episode"
+          }>
+                ${
+                  data.number_of_episodes === index + 1 ? `End` : index + 1
+                }     
             </a>
           `;
-          })
-          .join("")}
-      </div>
+        })
+        .join("")}
+    </div>`
+        : `<div class="recommendations" style=${
+            is_movie ? "max-height:480px" : "max-height:443px"
+          }>
+            <span style="font-size: 14px; font-weight: 500; color: var(--blue); width: 100%">Phim liên quan</span>
+            ${await renderMovieRecommendations(similar_url)}
+          </div>`
+    }
   `;
-  if (!is_movie) {
-    select_episodes.innerHTML = contens;
-    movie_title.innerText = `${data.name}: Tập ${episode}`;
-  } else {
-    movie_title.innerText = `${data.name || data.title}`;
-  }
+  sidebar.innerHTML = contents;
   setTitle(`Đang xem: ${data.name || data.title}`);
 };
 
@@ -67,7 +81,8 @@ async function Main() {
       "<h1 style='padding: 12px 0; color: var(--red); font-size: 20px'>type chỉ có thể là movie hoặc tv</h1>";
   } else {
     await renderFrame();
-    await renderMovieInfo();
+    await renderSidebar();
+    await renderListMovie(recommendations_url, movie_recommendations);
   }
 }
 Main();

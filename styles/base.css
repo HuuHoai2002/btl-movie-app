@@ -17,6 +17,7 @@ input {
   --purple: #a338d6;
   --blue: #5f48ea;
   --text: "#f3f3f3";
+  --sidebar: #2c3338;
 }
 
 body::-webkit-scrollbar {
@@ -28,7 +29,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--label);
+  background-color: var(--sidebar);
   border-radius: 10px;
 }
 .main-app {
@@ -88,4 +89,20 @@ body::-webkit-scrollbar-thumb {
 }
 .mt-50 {
   margin-top: 50px;
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+  color: white;
+  width: 70px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding: 0 5px;
+  font-weight: 500;
 }

@@ -19,15 +19,18 @@
 <body>
   <div class="main-app">
     <?php include_once('./layout/header.php') ?>
-    <div class="app-play-movie container min-h-100vh">
+    <div class="app-play-movie container">
       <div class="play-movie-content">
-        <div class="play-movie-title">
-          <span class="movie-title"></span>
+        <div class="play-movie-frame"></div>
+        <div class="play-sidebar">
+
         </div>
-        <div class="play-movie-frame">
-        </div>
-        <div class="select-episodes">
-        </div>
+      </div>
+    </div>
+    <div class="app-content-movie container">
+      <div class="app-content-wrapper">
+        <h2 class="app-content-heading">Có Thể Bạn Sẽ Thích</h2>
+        <div class="movie-list"></div>
       </div>
     </div>
     <?php include_once('./layout/footer.php') ?>
