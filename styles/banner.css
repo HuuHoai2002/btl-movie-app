@@ -9,7 +9,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
 
@@ -25,8 +25,16 @@
   left: 60px;
   top: 50%;
   transform: translate(0, -50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
 }
-
+.app-banner-poster > img {
+  width: 232px;
+  height: 348px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 .content-wrapper {
   max-width: 500px;
   display: flex;

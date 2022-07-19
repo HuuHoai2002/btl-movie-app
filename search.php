@@ -1,5 +1,5 @@
 <?php
-$value = isset($_GET['query']) ? $_GET['query'] : '';
+$value = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ $value = isset($_GET['query']) ? $_GET['query'] : '';
     <?php include "./layout/header.php"; ?>
     <div class="app-search container">
       <form action="search.php" class="app-search-content">
-        <input type="text" class="search-input" placeholder="Tìm kiếm những bộ phim mà bạn yêu thích" name="query" autocomplete="off" value="<?= htmlspecialchars_decode($value) ?>" required />
+        <input type="text" class="search-input" placeholder="Tìm kiếm những bộ phim mà bạn yêu thích" name="keyword" autocomplete="off" value="<?= htmlspecialchars_decode($value) ?>" required />
         <button class="base-btn btn-search" type="submit" title="Tìm phim ngay">Tìm kiếm</button>
       </form>
       <div class="search-content">

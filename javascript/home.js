@@ -8,7 +8,7 @@ const movie_upcoming = $(".movie-list.up-coming");
 
 // console.log(movie_popular, movie_toprated, movie_upcoming);
 
-const popular_url = `${base_url}/movie/${data_type.POPULAR}?api_key=${api_key}&language=vi&page=1`;
+const popular_url = `${base_url}/movie/${data_type.POPULAR}?api_key=${api_key}&language=vi&page=2`;
 const toprated_url = `${base_url}/movie/${data_type.TOP_RATED}?api_key=${api_key}&language=vi&page=1`;
 const upcoming_url = `${base_url}/movie/${data_type.UP_COMING}?api_key=${api_key}&language=vi&page=1`;
 

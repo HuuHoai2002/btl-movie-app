@@ -6,14 +6,14 @@ import { setTitle } from "../utils/setTitle.js";
 
 const movie_list = $(".movie-list");
 
-const query = params.get("query");
+const keyword = params.get("keyword");
 
-const search_url = `${base_url}/search/multi?api_key=${api_key}&language=vi&query=${query}`;
+const search_url = `${base_url}/search/multi?api_key=${api_key}&language=vi&query=${keyword}`;
 
 async function Main() {
-  if (query) {
+  if (keyword) {
     await renderListMovie(search_url, movie_list);
-    setTitle(`Kết quả tìm kiếm cho: ${query}`);
+    setTitle(`Kết quả tìm kiếm cho: ${keyword}`);
   }
 }
 Main();

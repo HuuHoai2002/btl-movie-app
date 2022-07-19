@@ -11,7 +11,7 @@ const frame = $(".play-movie-frame");
 const sidebar = $(".play-sidebar");
 const movie_recommendations = $(".movie-list");
 
-const type = params.get("type");
+const type = params.get("type");  
 const id = params.get("id");
 const episode = params.get("episode");
 

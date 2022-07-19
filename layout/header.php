@@ -25,13 +25,13 @@ $is_login = isset($_SESSION['login']) ? $_SESSION['login'] : false;
           <a href="index.php" class="content-link">Trang Chủ</a>
           <a href="movie.php?page=1" class="content-link">Phim Chiếu Rạp</a>
           <a href="tvseries.php?page=1" class="content-link">Phim Bộ</a>
-          <a href="" class="content-link">Hỗ Trợ</a>
+          <!-- <a href="" class="content-link">Hỗ Trợ</a> -->
         </div>
       </div>
     </div>
     <div class="app-header-right">
       <form action="search.php" class="app-header-search">
-        <input type="text" class="app-search-input" placeholder="Bạn muốn xem gì hôm nay?" name="query" autocomplete="off" required />
+        <input type="text" class="app-search-input" placeholder="Bạn muốn xem gì hôm nay?" name="keyword" autocomplete="off" required />
         <button type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -40,7 +40,7 @@ $is_login = isset($_SESSION['login']) ? $_SESSION['login'] : false;
       </form>
       <div class="app-header-users">
         <?php
-        if ($is_login) {
+        if (!$is_login) {
           echo (' 
               <div class="users">
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -54,17 +54,19 @@ $is_login = isset($_SESSION['login']) ? $_SESSION['login'] : false;
                   <div class="users-info">
                     Xin chào , Hoài
                   </div>
-                  <div class="actions">
-                    <div class="actions-item">Tài khoản 
+                  <div class="list-action">
+                    <a href="account.php" class="action-item">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
                       </svg>
-                    </div>
-                    <div class="actions-item">Đăng xuất 
+                      Tài khoản 
+                    </a>
+                    <a class="action-item"> 
                       <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 20 20"  fill="currentColor">
                         <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" />
                       </svg>
-                    </div>
+                      Đăng xuất
+                    </a>
                   </div>
                 </div>
               </div>

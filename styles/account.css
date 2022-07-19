@@ -1,0 +1,60 @@
+.app-account {
+  display: flex;
+  gap: 100px;
+}
+
+.app-account-content {
+  flex: 1;
+}
+.title {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title > h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+}
+.title > span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--blue);
+  cursor: pointer;
+}
+.title > span:hover {
+  opacity: 0.8;
+}
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+.account-label {
+  min-width: 150px;
+  color: var(--label);
+  cursor: pointer;
+}
+.account-input {
+  width: 300px;
+  height: 45px;
+  padding: 8px 15px;
+  border: none;
+  outline: none;
+  background-color: var(--sidebar);
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.account-input:focus {
+  border: 1px solid var(--blue);
+}
+.update_btn {
+  display: none;
+}

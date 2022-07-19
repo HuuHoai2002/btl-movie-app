@@ -20,7 +20,7 @@
     <?php include_once('./layout/header.php') ?>
     <div class="app-search container">
       <form action="search.php" class="app-search-content">
-        <input type="text" class="search-input" placeholder="Bạn tìm phim nào hôm nay?" name="query" autocomplete="off" required />
+        <input type="text" class="search-input" placeholder="Bạn tìm phim nào hôm nay?" name="keyword" autocomplete="off" required />
         <button class="base-btn btn-search" type="submit" title="Tìm phim ngay">Tìm kiếm</button>
       </form>
     </div>

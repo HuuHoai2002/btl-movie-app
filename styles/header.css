@@ -112,7 +112,7 @@
   left: 0;
   background-color: transparent;
   width: 240px;
-  height: 8px;
+  height: 9px;
 }
 .users-info {
   display: flex;
@@ -121,10 +121,12 @@
   padding: 20px;
   font-weight: 500;
 }
-.actions {
+.list-action {
   border-top: 1px solid var(--border);
 }
-.actions-item {
+.action-item {
+  display: block;
+  text-decoration: none;
   padding: 20px;
   color: var(--text);
   transition: all 0.25s;
@@ -132,8 +134,12 @@
   align-items: center;
   gap: 10px;
 }
-.actions-item:hover {
+.action-item:hover {
   background-color: var(--border);
+}
+.action-item:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .users:hover > .users-content {
   display: block;
