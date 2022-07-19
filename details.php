@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/footer.css">
   <link rel="stylesheet" href="./styles/details.css">
-  <title>Details</title>
+  <title>Chi tiết</title>
 </head>
 
 <body>

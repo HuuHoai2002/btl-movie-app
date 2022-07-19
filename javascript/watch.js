@@ -1,12 +1,11 @@
 import { api_key, base_url } from "../config/config.js";
+import { params } from "../utils/getParams.js";
 import {
   renderListMovie,
   renderMovieRecommendations,
 } from "../utils/render.js";
 import { $ } from "../utils/selector.js";
 import { setTitle } from "../utils/setTitle.js";
-
-const params = new URLSearchParams(window.location.search);
 
 const frame = $(".play-movie-frame");
 const sidebar = $(".play-sidebar");

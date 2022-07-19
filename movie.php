@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./styles/search.css">
   <link rel="stylesheet" href="./styles/footer.css">
 
-  <title>Phim chiếu rạp</title>
+  <title>Phim Chiếu Rạp | TV360</title>
 </head>
 
 <body>

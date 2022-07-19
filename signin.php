@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/base.css" />
   <link rel="stylesheet" href="./styles/form.css" />
-  <title>Document</title>
+  <title>Đăng Nhập | TV360</title>
 </head>
 
 <body>

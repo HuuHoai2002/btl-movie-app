@@ -11,7 +11,11 @@ export const renderAppBanner = async (url, root) => {
                   <div class="overlay"></div>
                   <div class="app-banner-image">
                     <img
-                      src=${image_url + content.backdrop_path}
+                      src=${
+                        content.backdrop_path
+                          ? image_url + content.backdrop_path
+                          : "https://cdn.dribbble.com/userupload/2905354/file/original-92212c04a044acd88c69bedc56b3dda2.png?compress=1&resize=1024x768"
+                      }
                       alt="preview-movie"
                     />
                   </div>
@@ -65,7 +69,11 @@ export const renderListMovie = async (url, root) => {
             content.id
           }`} class="movie-item">
               <div class="movie-image">
-                <img src=${image_reduce + content.poster_path} alt="" />
+                <img src=${
+                  content.poster_path
+                    ? image_reduce + content.poster_path
+                    : "https://cdn.dribbble.com/userupload/2905354/file/original-92212c04a044acd88c69bedc56b3dda2.png?compress=1&resize=1024x768"
+                } alt="" />
               </div>
               <div class="movie-content">
                 <p class="movie-content-info">${
@@ -88,7 +96,11 @@ export const renderMovieDetails = async (url, root) => {
   const contents = `
       <div class="movie-details-content">
         <div class="movie-details-image">
-          <img src=${image_url + data.backdrop_path} alt="preview-movie-detals">
+          <img src=${
+            data.backdrop_path
+              ? image_url + data.backdrop_path
+              : "https://cdn.dribbble.com/userupload/2905354/file/original-92212c04a044acd88c69bedc56b3dda2.png?compress=1&resize=1024x768"
+          } alt="preview-movie-detals">
         </div>
         <div class="movie-info">
           <h2 class="movie-title">${
@@ -151,7 +163,11 @@ export const renderMovieRecommendations = async (url) => {
       return `
       <div class="movie-recommendations">
         <div class="movie-recommendations-item">
-          <img src=${image_reduce + item.poster_path} alt="movie">
+          <img src=${
+            item.poster_path
+              ? image_reduce + item.poster_path
+              : "https://cdn.dribbble.com/userupload/2905354/file/original-92212c04a044acd88c69bedc56b3dda2.png?compress=1&resize=1024x768"
+          } alt="movie">
         <div class="movie-recommendations-info">
           <span class="title">${item.title || item.name}</span>
         <div class="vote">8.8

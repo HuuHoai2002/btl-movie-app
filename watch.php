@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./styles/banner.css">
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/watch.css">
-  <title>Watch</title>
+  <title>Xem Phim | TV360</title>
 </head>
 
 <body>

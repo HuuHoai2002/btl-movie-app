@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/search.css">
   <link rel="stylesheet" href="./styles/footer.css">
-  <title>Phim bộ</title>
+  <title>Phim Bộ | TV360</title>
 </head>
 
 <body>

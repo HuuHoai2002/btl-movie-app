@@ -16,7 +16,7 @@ $value = isset($_GET['query']) ? $_GET['query'] : '';
   <link rel="stylesheet" href="./styles/movie.css" />
   <link rel="stylesheet" href="./styles/search.css" />
   <link rel="stylesheet" href="./styles/footer.css" />
-  <title>Tìm kiếm</title>
+  <title>Tìm Kiếm | TV360</title>
 </head>
 
 <body>

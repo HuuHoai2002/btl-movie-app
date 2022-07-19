@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+session_start();
+$is_login = isset($_SESSION['login']) ? $_SESSION['login'] : false;
+?>
 
 <div class="app-header">
   <div class="app-header-wrapper">
@@ -36,17 +39,66 @@
         </button>
       </form>
       <div class="app-header-users">
-        <a href="signin.php" class="app-header-signin">Đăng Nhập</a>
-        <!-- <div class="users">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                <path
-                  d="M15 0a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15zm0 18.75c8.288 0 15 3.356 15 7.5V30H0v-3.75c0-4.144 6.713-7.5 15-7.5z"
-                  fill="#fff"
-                  fill-opacity="0.87"
-                ></path>
-              </svg>
-            </div> -->
+        <?php
+        if ($is_login) {
+          echo (' 
+              <div class="users">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                  <path
+                    d="M15 0a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15zm0 18.75c8.288 0 15 3.356 15 7.5V30H0v-3.75c0-4.144 6.713-7.5 15-7.5z"
+                    fill="#fff"
+                    fill-opacity="0.87"
+                  ></path>
+                </svg>
+                <div class="users-content">
+                  <div class="users-info">
+                    Xin chào , Hoài
+                  </div>
+                  <div class="actions">
+                    <div class="actions-item">Tài khoản 
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div class="actions-item">Đăng xuất 
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 20 20"  fill="currentColor">
+                        <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ');
+        } else {
+          echo ('<a href="signin.php" class="app-header-signin">Đăng Nhập</a>');
+        }
+        ?>
       </div>
     </div>
   </div>
 </div>
+<script>
+  const pathName = window.location.pathname;
+  const list_link = document.querySelectorAll('.content-link');
+
+  switch (pathName.replace('/movie-app', '')) {
+    case '/' || '/index.php': {
+      list_link[0].classList.add('active');
+      break;
+    }
+    case '/movie.php': {
+      list_link[1].classList.add('active');
+      break;
+    }
+    case '/tvseries.php': {
+      list_link[2].classList.add('active');
+      break;
+    }
+    case '/help.php': {
+      list_link[3].classList.add('active');
+      break;
+    }
+    default:
+      break;
+  }
+</script>

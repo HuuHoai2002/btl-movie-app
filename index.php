@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./styles/banner.css">
   <link rel="stylesheet" href="./styles/movie.css">
   <link rel="stylesheet" href="./styles/footer.css">
-  <title>Trang chủ</title>
+  <title>Trang Chủ | TV360</title>
 </head>
 
 <body>

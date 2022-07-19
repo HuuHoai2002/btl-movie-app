@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/base.css" />
   <link rel="stylesheet" href="./styles/form.css" />
-  <title>Document</title>
+  <title>Đăng Ký | TV360</title>
 </head>
 
 <body>
