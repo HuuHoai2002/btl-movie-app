@@ -23,7 +23,6 @@
       <div class="play-movie-content">
         <div class="play-movie-frame"></div>
         <div class="play-sidebar">
-
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { image_reduce, image_url } from "../config/config.js";
-import { setTitle } from "../utils/setTitle.js";
 import { fetchData } from "./fetchData.js";
+import { setTitle } from "./setTitle.js";
 
 export const renderAppBanner = async (url, root) => {
   const data = await fetchData(url);

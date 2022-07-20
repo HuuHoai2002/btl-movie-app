@@ -7,6 +7,9 @@ input {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
+html {
+  overflow: overlay;
+}
 :root {
   --primary: #1e272e;
   --secondary: #222b32;
@@ -20,15 +23,15 @@ input {
   --sidebar: #2c3338;
 }
 
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 8px;
 }
 
-body::-webkit-scrollbar-track {
-  background-color: var(--primary);
+html::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background-color: var(--sidebar);
   border-radius: 10px;
 }
