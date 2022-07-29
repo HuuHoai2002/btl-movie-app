@@ -1,3 +1,36 @@
+<?php
+session_start();
+include './database/connect.php';
+
+$emailExist = false;
+$registerSuccess = false;
+
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  // hash password before storing in database
+  $password = password_hash($password, PASSWORD_DEFAULT);
+
+  // check if email already exist in database
+  $checkEmail = "SELECT * FROM users WHERE email = '$email'";
+  $resultCheckEmail = $connect->query($checkEmail);
+
+  // if email already exist, set $emailExist to true
+  if ($resultCheckEmail->num_rows > 0) {
+    $emailExist = true;
+  } else {
+    $sql = "INSERT INTO users (created_at	,updated_at	,	username,	user_avatar,	email	,password	) VALUES (NOW(),NOW(),'$name','https://i.pravatar.cc/50','$email','$password')";
+    $result = $connect->query($sql);
+    if ($result) {
+      $registerSuccess = true;
+      header('Location: signin.php');
+    }
+  }
+}
+$connect->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,11 +64,23 @@
       </a>
     </div>
     <div class="form-base app-signup">
-      <form method="get" autocomplete="off" class="app-form">
+      <form method="post" autocomplete="off" class="app-form">
         <div class="app-form-head">
           <h2 class="form-heading">Register</h2>
         </div>
         <div class="app-form-body">
+          <?php
+          if ($emailExist) {
+            echo '<div class="field-error" title="Email này đã được sử dụng , hãy đổi email khác">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox=" 0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <span>Email này đã được sử dụng , hãy đổi email khác</span>
+          </div>';
+          }
+          ?>
           <div class="form-field">
             <label for="email" class="field-label">Họ và tên</label>
             <input type="text" class="field-input" placeholder="Nhập vào họ và tên" id="name" name="name" required />
@@ -52,7 +97,7 @@
             </div>
           </div>
           <div class="form-field">
-            <button class="field-btn">Đăng ký</button>
+            <button class="field-btn" type="submit">Đăng ký</button>
           </div>
           <div class="form-field">
             <p class="field-any">

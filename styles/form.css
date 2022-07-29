@@ -61,6 +61,17 @@
   padding: 15px;
   cursor: pointer;
 }
+.field-success {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 15px;
+  cursor: pointer;
+}
 .field-error > .icon {
   position: absolute;
   top: 50%;

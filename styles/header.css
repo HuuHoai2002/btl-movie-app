@@ -121,6 +121,10 @@
   padding: 20px;
   font-weight: 500;
 }
+.users-info > span {
+  color: var(--blue);
+  margin-left: 5px;
+}
 .list-action {
   border-top: 1px solid var(--border);
 }

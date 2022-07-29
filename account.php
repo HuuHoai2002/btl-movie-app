@@ -1,9 +1,9 @@
 <?php
-$fullname = "Hoài";
-$email = "deobiet@00000.com";
-$tel = "06156168498";
+session_start();
+if (!$_SESSION['user']) {
+  header('Location: signin.php');
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +32,12 @@ $tel = "06156168498";
         </div>
         <form class="account-form" autocomplete="off">
           <div class="form-group">
-            <label for="fullname" class="account-label">Họ và tên</label>
-            <input disabled name="fullname" id="fullname" type="text" placeholder="Nhập vào họ và tên" class="account-input" value="<?= $fullname ?>">
+            <label for="username" class="account-label">Họ và tên</label>
+            <input disabled name="username" id="username" type="text" placeholder="Nhập vào họ và tên" class="account-input" value="<?= $_SESSION['user']['username']  ?>">
           </div>
           <div class="form-group">
             <label for="email" class="account-label">Email</label>
-            <input disabled name="email" id="email" type="email" autocomplete="off" placeholder="Nhập vào email" class="account-input" value="<?= $email ?>">
-          </div>
-          <div class="form-group">
-            <label for="tel" class="account-label">Số điện thoại</label>
-            <input disabled name="tel" id="tel" type="tel" placeholder="Nhập vào số điện thoại" class="account-input" value="<?= $tel ?>">
+            <input disabled name="email" id="email" type="email" autocomplete="off" placeholder="Nhập vào email" class="account-input" value="<?= $_SESSION['user']['email'] ?>">
           </div>
           <div class="form-group">
             <a href="" class="base-btn bg-primary update_btn">Cập Nhật</a>
@@ -51,39 +47,33 @@ $tel = "06156168498";
       <div class="app-account-content">
         <div class="title">
           <h2>Mật khẩu</h2>
-          <span>Chỉnh sửa</span>
+          <span class="update-account-btn-p">Chỉnh sửa</span>
         </div>
+        <form class="account-form" autocomplete="off">
+          <div class="form-group">
+            <label style="min-width: 200px" for="current-password" class="account-label">Mật khẩu hiện tại</label>
+            <input disabled name="current-password" id="current-password" type="text" placeholder="Nhập vào mật khẩu hiện tại" class="account-input account-input-p">
+          </div>
+          <div class="form-group">
+            <label style="min-width: 200px" for="new-password" class="account-label">Mật khẩu mới</label>
+            <input disabled name="new-password" id="new-password" type="email" autocomplete="off" placeholder="Nhập vào mật khẩu mới" class="account-input account-input-p">
+          </div>
+          <div class="form-group">
+            <label style="min-width: 200px" for="password-retype" class="account-label">Nhập lại mật khẩu mới</label>
+            <input disabled name="password-retype" id="password-retype" type="password-retype" placeholder="Nhập lại mật khẩu mới" class="account-input account-input-p">
+          </div>
+          <div class="form-group">
+            <a href="" class="base-btn bg-primary update_btn update_btn-p">Cập Nhật</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   </div>
   <script>
-    const $ = document.querySelector.bind(document);
-    const $$ = document.querySelectorAll.bind(document);
-    const account_input = $$('.account-input');
-    const btn = $('.update-account-btn');
-    const update_btn = $('.update_btn');
 
-    let is_update = false;
-
-    btn.addEventListener('click', () => {
-      if (!is_update) {
-        account_input.forEach(input => {
-          input.disabled = false;
-        })
-        update_btn.style.display = 'block';
-        btn.innerText = 'Huỷ';
-        is_update = true;
-      } else {
-        account_input.forEach(input => {
-          input.disabled = true;
-        })
-        update_btn.style.display = 'none';
-        btn.innerText = 'Chỉnh sửa';
-        is_update = false;
-      }
-    })
   </script>
+  <script async src="./javascript/account.js" type="module"></script>
 </body>
 
 </html>

@@ -11,12 +11,14 @@ const frame = $(".play-movie-frame");
 const sidebar = $(".play-sidebar");
 const movie_recommendations = $(".movie-list");
 
+//get parameters from url
 const type = params.get("type");
 const id = params.get("id");
 const episode = params.get("episode");
 
 const is_movie = type === "movie";
 
+//api url
 const details_url = `${base_url}/${type}/${id}?api_key=${api_key}&language=vi`;
 const similar_url = `${base_url}/${type}/${id}/similar?api_key=${api_key}&language=vi`;
 const recommendations_url = `${base_url}/${type}/${id}/recommendations?api_key=${api_key}&language=vi`;

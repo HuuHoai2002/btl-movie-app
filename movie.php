@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +38,7 @@
         <?php
         $page = $_GET['page'];
 
-        echo '<a class="base-btn bg-primary" href="movie.php?page=' . ($page + 1) . '">Xem thêm</a>';
+        echo '<a class="base-btn bg-primary" href="movie.php?ref=movie&page=' . ($page + 1) . '">Xem thêm</a>';
         ?>
       </div>
     </div>

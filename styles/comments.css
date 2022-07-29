@@ -1,0 +1,142 @@
+.app-comments {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.app-comments-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.app-comment-content {
+  width: 100%;
+  background-color: var(--secondary);
+  padding: 30px;
+}
+
+.comments-quantity {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--label);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.current-date {
+  color: white !important;
+}
+
+.users-post-comments {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.input-comments {
+  position: relative;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-comments > textarea {
+  box-sizing: border-box;
+  width: 820px;
+  height: 45px;
+  line-height: 35px;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: var(--border);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  overflow: overlay;
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+}
+.input-comments > textarea::placeholder {
+  color: var(--label);
+}
+.input-comments > textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.input-comments > textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.input-comments > textarea::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar);
+  border-radius: 10px;
+}
+.btn-send-comment {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(0, -50%);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn-send-comment:hover {
+  color: var(--blue);
+}
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.list-comments {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.comment {
+  max-width: 890px;
+}
+.comment-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+.comment-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comment-author {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+.author-name {
+  font-weight: 500;
+}
+.comment-date {
+  font-size: 13px;
+  color: var(--label);
+}
+.comment-text > p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.8;
+}
+.not-yet-comment > p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--label);
+}

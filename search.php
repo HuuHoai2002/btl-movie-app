@@ -1,4 +1,5 @@
 <?php
+session_start();
 $value = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 ?>
 

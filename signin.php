@@ -1,3 +1,36 @@
+<?php
+session_start();
+include('./database/connect.php');
+
+// Check if user is logged in
+$accountError = false;
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $sql = "SELECT * FROM users WHERE email = '$email'";
+  $result = $connect->query($sql);
+  $user = $result->fetch_assoc();
+
+  if ($user) {
+    // Check if password is correct
+    if (password_verify($password, $user['password'])) {
+      $_SESSION['user'] = $user;
+      // Redirect to homepage
+      header('Location: index.php');
+    } else {
+      $accountError = true;
+    }
+  } else {
+    $accountError = true;
+  }
+}
+
+$connect->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,14 +69,19 @@
           <h2 class="form-heading">Welcome back</h2>
         </div>
         <div class="app-form-body">
-          <!-- <div class="field-error" title="Tài khoản hoặc mật khẩu không chính xác">
-            <div class="icon">
+          <?php
+          if ($accountError) {
+            echo '<div class="field-error" title="Tài khoản hoặc mật khẩu không chính xác">
+                <div class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox=" 0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
               </svg>
             </div>
             <span>Tài khoản hoặc mật khẩu không chính xác</span>
-          </div> -->
+          </div>';
+          }
+          ?>
+
           <div class="form-field">
             <label for="email" class="field-label">Email</label>
             <input type="email" class="field-input" placeholder="Nhập vào địa chỉ email" id="email" name="email" required />
