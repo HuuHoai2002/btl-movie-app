@@ -19,10 +19,10 @@ if (isset($_GET['type']) && isset($_GET['id'])) {
 
     // get all comments for this movie
 
-    $commentsSql = "SELECT * FROM comments WHERE movie_id = '$movie_id' AND movie_type = '$movie_type'";
+   
+  } $commentsSql = "SELECT * FROM comments WHERE movie_id = '$movie_id' AND movie_type = '$movie_type' ORDER BY created_at DESC";
     $commentsResult = $connect->query($commentsSql);
     $comments = $commentsResult->fetch_all(MYSQLI_ASSOC);
-  }
 }
 
 $connect->close();

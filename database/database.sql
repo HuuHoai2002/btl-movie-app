@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS `movie_db`;
+CREATE DATABASE IF NOT EXISTS `movie_db_backup`;
 
-USE `movie_db`;
+USE `movie_db_backup`;
 
 CREATE TABLE `comments` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -23,4 +23,5 @@ CREATE TABLE `users` (
   `user_avatar` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
+  `role` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;  

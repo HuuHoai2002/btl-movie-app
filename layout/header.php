@@ -24,7 +24,13 @@ $is_login = isset($_SESSION['user']) ? $_SESSION['user'] : false;
           <a href="index.php?ref=home" class="content-link">Trang Chủ</a>
           <a href="movie.php?ref=movie&page=1" class="content-link">Phim Chiếu Rạp</a>
           <a href="tvseries.php?ref=tvseries&page=1" class="content-link">Phim Bộ</a>
-          <!-- <a href="" class="content-link">Hỗ Trợ</a> -->
+          <?php
+          if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['role'] == '1') {
+              echo '<a href="admin.php?ref=admin" class="content-link">Quản Trị</a>';
+            }
+          }
+          ?>
         </div>
       </div>
     </div>
@@ -94,6 +100,10 @@ $is_login = isset($_SESSION['user']) ? $_SESSION['user'] : false;
     }
     case 'tvseries': {
       list_link[2].classList.add('active');
+      break;
+    }
+    case 'admin': {
+      list_link[3].classList.add('active');
       break;
     }
     default:

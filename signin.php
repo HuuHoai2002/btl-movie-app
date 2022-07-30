@@ -5,6 +5,10 @@ include('./database/connect.php');
 // Check if user is logged in
 $accountError = false;
 
+if (isset($_SESSION['user'])) {
+  header("Location: index.php");
+}
+
 if (isset($_POST['email']) && isset($_POST['password'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];

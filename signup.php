@@ -20,7 +20,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
   if ($resultCheckEmail->num_rows > 0) {
     $emailExist = true;
   } else {
-    $sql = "INSERT INTO users (created_at	,updated_at	,	username,	user_avatar,	email	,password	) VALUES (NOW(),NOW(),'$name','https://i.pravatar.cc/50','$email','$password')";
+    $sql = "INSERT INTO users (created_at	,updated_at	,	username,	user_avatar,	email	,password	, role) VALUES (NOW(),NOW(),'$name','https://i.pravatar.cc/50','$email','$password','0')";
     $result = $connect->query($sql);
     if ($result) {
       $registerSuccess = true;

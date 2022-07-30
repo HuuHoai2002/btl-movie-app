@@ -1,0 +1,87 @@
+.app-admin {
+}
+.admin-dashboard {
+  margin: 30px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.dashboard {
+  width: 270px;
+  min-height: 200px;
+  background-color: #2c3338;
+  border-radius: 5px;
+  overflow: overlay;
+}
+
+.dashboard-item {
+  padding: 20px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dashboard-item:not(.active):hover {
+  background-color: #384047;
+}
+.dashboard-item.active {
+  background-color: #384047;
+  opacity: 1;
+}
+
+.dashboard-content {
+  flex: 1;
+}
+
+table {
+  width: 100%;
+}
+thead {
+  background-color: #384047;
+}
+th,
+td {
+  vertical-align: middle;
+}
+th {
+  padding: 20px 30px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 20px;
+}
+td {
+  box-sizing: border-box;
+  padding: 10px 30px;
+  border-bottom: 1px solid #2c3338;
+}
+.btn-delete {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(32, 227, 178);
+  background-color: rgba(32, 227, 178, 0.3);
+  border-radius: 5px;
+  width: 60px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.overflow {
+  max-width: 264px;
+  opacity: 0.7;
+}
+.name {
+  color: coral;
+}
+
+.table {
+  display: none;
+}
+
+.table.active {
+  display: block;
+}
