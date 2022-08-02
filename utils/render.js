@@ -57,7 +57,6 @@ export const renderAppBanner = async (url, root) => {
             `;
     })
     .join("");
-
   root.innerHTML = contents;
 };
 export const renderListMovie = async (url, root) => {

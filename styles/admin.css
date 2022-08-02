@@ -71,11 +71,13 @@ td {
   cursor: pointer;
 }
 .overflow {
-  max-width: 264px;
+  max-width: 250px;
   opacity: 0.7;
+  font-size: 12px;
 }
 .name {
   color: coral;
+  font-weight: 500;
 }
 
 .table {

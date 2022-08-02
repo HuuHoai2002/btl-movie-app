@@ -5,7 +5,7 @@ include('./database/connect.php');
 if (!isset($_SESSION['user'])) {
   header("Location: signin.php");
 } else {
-  if ($_SESSION['user']['role'] != '1' || $_SESSION['user']['role'] == '0') {
+  if ($_SESSION['user']['roles'] != '1' || $_SESSION['user']['roles'] == '0') {
     header("Location: index.php");
   }
 }
@@ -75,7 +75,7 @@ $comments = $commentsResult->fetch_all(MYSQLI_ASSOC);
                     <td><?= $user['user_id'] ?></td>
                     <td class="name"><?= $user['username'] ?></td>
                     <td><?= $user['email'] ?></td>
-                    <td><?= $user['role'] == '1' ? 'Admin' : 'User' ?></td>
+                    <td><?= $user['roles'] == '1' ? 'Admin' : 'User' ?></td>
                     <td>
                       <form method="post" action="deleteUser.php" onsubmit="return confirm('Xoá người dùng này? Sau khi xoá thì họ không thể xem phim được nữa.');">
                         <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
@@ -104,7 +104,7 @@ $comments = $commentsResult->fetch_all(MYSQLI_ASSOC);
                     <td><?= $comment['comment_id'] ?></td>
                     <td><?= $comment['user_id'] ?></td>
                     <td class="name"><?= $user['username'] ?></td>
-                    <td><?= $comment['content'] ?></td>
+                    <td class="overflow" title="<?= $comment['content'] ?>"><?= $comment['content'] ?></td>
                     <td>
                       <form method="post" action="deleteComment.php" onsubmit="return confirm('Bạn chắc chắn muốn xoá comment này chứ?.');">
                         <input type="hidden" name="comment_id" value="<?= $comment['comment_id'] ?>">

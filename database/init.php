@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'movie_db_backup');
+$connect = new mysqli('localhost', 'root', '', '');
 $query = '';
 $sqlscript = file('database.sql');
 
@@ -11,9 +11,8 @@ foreach ($sqlscript as $line) {
   }
   $query = $query . $line;
   if ($endwith == ';') {
-    mysqli_query($conn, $query) or die('<div class="error-response sql-import-response">Lỗi: <b>' . $query . '</b></div>');
+    $connect->query($query) or die('<div class="error-response sql-import-response">Lỗi: <b>' . $query . '</b></div>');
     $query = '';
   }
 }
-header('Location: index.php');
-echo '<div class="success-response sql-import-response">Nhập dữ liệu thành công</div>';
+echo '<div class="success-response sql-import-response">Khởi tạo database thành công</div>';

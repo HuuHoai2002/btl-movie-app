@@ -26,7 +26,7 @@ $is_login = isset($_SESSION['user']) ? $_SESSION['user'] : false;
           <a href="tvseries.php?ref=tvseries&page=1" class="content-link">Phim Bộ</a>
           <?php
           if (isset($_SESSION['user'])) {
-            if ($_SESSION['user']['role'] == '1') {
+            if ($_SESSION['user']['roles'] == '1') {
               echo '<a href="admin.php?ref=admin" class="content-link">Quản Trị</a>';
             }
           }

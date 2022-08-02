@@ -19,10 +19,11 @@ if (isset($_GET['type']) && isset($_GET['id'])) {
 
     // get all comments for this movie
 
-   
-  } $commentsSql = "SELECT * FROM comments WHERE movie_id = '$movie_id' AND movie_type = '$movie_type' ORDER BY created_at DESC";
-    $commentsResult = $connect->query($commentsSql);
-    $comments = $commentsResult->fetch_all(MYSQLI_ASSOC);
+
+  }
+  $commentsSql = "SELECT * FROM comments WHERE movie_id = '$movie_id' AND movie_type = '$movie_type' ORDER BY created_at DESC";
+  $commentsResult = $connect->query($commentsSql);
+  $comments = $commentsResult->fetch_all(MYSQLI_ASSOC);
 }
 
 $connect->close();
@@ -76,7 +77,7 @@ $connect->close();
           <div class="input-comments">
             <textarea name="content" placeholder="Viết bình luận ..."></textarea>
             <button type="submit" class="btn-send-comment">
-              <svg viewBox="0 0 16 16" style="transform: rotate(45deg)" width="24px" height="24px" focusable="false" role="img" aria-label="cursor fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <svg viewBox="0 0 16 16" style="transform: rotate(45deg)" width="24px" height="24px" focusable="false" roles="img" aria-label="cursor fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <g>
                   <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
                 </g>
