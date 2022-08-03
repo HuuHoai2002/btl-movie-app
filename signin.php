@@ -21,6 +21,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     // Check if password is correct
     if (password_verify($password, $user['password'])) {
       $_SESSION['user'] = $user;
+      if (isset($_POST['remember'])) {
+        setcookie('email', $email, time() + (86400 * 30), "/");
+        setcookie('password', $password, time() + (86400 * 30), "/");
+      } else {
+        setcookie('email', '', time() - 3600, "/");
+        setcookie('password', '', time() - 3600, "/");
+      }
       // Redirect to homepage
       header('Location: index.php');
     } else {
@@ -70,7 +77,7 @@ $connect->close();
     <div class="form-base app-signin">
       <form action="" method="post" autocomplete="off" class="app-form">
         <div class="app-form-head">
-          <h2 class="form-heading">Welcome back</h2>
+          <h2 class="form-heading">Đăng Nhập</h2>
         </div>
         <div class="app-form-body">
           <?php
@@ -88,15 +95,18 @@ $connect->close();
 
           <div class="form-field">
             <label for="email" class="field-label">Email</label>
-            <input type="email" class="field-input" placeholder="Nhập vào địa chỉ email" id="email" name="email" required />
+            <input type="email" class="field-input" placeholder="Nhập vào địa chỉ email" id="email" name="email" required value="<?php if (isset($_COOKIE['email'])) echo $_COOKIE['email']  ?>" />
           </div>
           <div class="form-field">
             <label for="password" class="field-label">Mật khẩu</label>
             <div style="position: relative">
-              <input type="password" class="field-input field-input-password" placeholder="Nhập vào mật khẩu" id="password" name="password" required />
+              <input type="password" class="field-input field-input-password" placeholder="Nhập vào mật khẩu" id="password" name="password" required value="<?php if (isset($_COOKIE['password'])) echo $_COOKIE['password']  ?>" />
               <?php include_once('./layout/eye.php') ?>
             </div>
-            <span class="field-forgot">Quên mật khẩu?</span>
+            <span class="field-forgot">
+              <input type="checkbox" id="remember" name="remember" <?php if (isset($_COOKIE['email'])) echo 'checked' ?>>
+              <label for="remember">Nhớ mật khẩu</label>
+            </span>
           </div>
           <div class="form-field">
             <button class="field-btn">Đăng nhập</button>

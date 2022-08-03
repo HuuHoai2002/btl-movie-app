@@ -24,4 +24,4 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `roles` varchar(1) NOT NULL DEFAULT '0'
-);  
+);  .

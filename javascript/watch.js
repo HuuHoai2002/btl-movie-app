@@ -29,7 +29,8 @@ const renderFrame = async () => {
       is_movie
         ? `https://www.2embed.to/embed/tmdb/movie?id=${id}`
         : `https://www.2embed.to/embed/tmdb/tv?id=${id}&s=1&e=${episode}`
-    } width="100%" height="100%" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    } width="100%" height="100%" allowfullscreen="allowfullscreen" frameborder="0">
+    </iframe>
   `;
   frame.innerHTML = contents;
 };

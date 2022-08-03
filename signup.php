@@ -66,7 +66,7 @@ $connect->close();
     <div class="form-base app-signup">
       <form method="post" autocomplete="off" class="app-form">
         <div class="app-form-head">
-          <h2 class="form-heading">Register</h2>
+          <h2 class="form-heading">Đăng Ký</h2>
         </div>
         <div class="app-form-body">
           <?php

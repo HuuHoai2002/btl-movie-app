@@ -106,7 +106,8 @@
   /* background-color: #e1f4f7; */
 }
 .field-forgot {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -114,10 +115,6 @@
   cursor: pointer;
   color: #00ca72;
 }
-.field-forgot:hover {
-  text-decoration: underline;
-}
-
 .field-icons {
   position: absolute;
   top: 50%;
