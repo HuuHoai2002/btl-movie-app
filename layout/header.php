@@ -1,5 +1,16 @@
 <?php
 $is_login = isset($_SESSION['user']) ? $_SESSION['user'] : false;
+
+function getName($name)
+{
+  $name = explode(' ', $name);
+  return $name[count($name) - 2] . ' ' . $name[count($name) - 1];
+}
+$username = '';
+if (isset($_SESSION['user'])) {
+  $username = getName($_SESSION['user']['username']);
+}
+
 ?>
 
 <div class="app-header">
@@ -57,7 +68,7 @@ $is_login = isset($_SESSION['user']) ? $_SESSION['user'] : false;
                 </svg>
                 <div class='users-content'>
                   <div class='users-info'>
-                    Xin chào , <span>{$_SESSION['user']['username']}</span>
+                    Xin chào , <span>{$username}</span>
                   </div>
                   <div class='list-action'>
                     <a href='account.php' class='action-item'>
