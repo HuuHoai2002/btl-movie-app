@@ -16,10 +16,6 @@ if (isset($_GET['type']) && isset($_GET['id'])) {
     $commentsCountResult = $connect->query($commentsCountSql);
     $commentsCount = $commentsCountResult->fetch_assoc();
     $commentsCount = $commentsCount['COUNT(*)'];
-
-    // get all comments for this movie
-
-
   }
   $commentsSql = "SELECT * FROM comments WHERE movie_id = '$movie_id' AND movie_type = '$movie_type' ORDER BY created_at DESC";
   $commentsResult = $connect->query($commentsSql);
@@ -75,7 +71,7 @@ $connect->close();
             <img src="<?= $_SESSION['user']['user_avatar'] ?>" alt="" class="user-avatar">
           </div>
           <div class="input-comments">
-            <textarea name="content" placeholder="Viết bình luận ..."></textarea>
+            <textarea name="content" placeholder="Viết bình luận ..." required></textarea>
             <button type="submit" class="btn-send-comment">
               <svg viewBox="0 0 16 16" style="transform: rotate(45deg)" width="24px" height="24px" focusable="false" roles="img" aria-label="cursor fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                 <g>
